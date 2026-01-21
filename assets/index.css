@@ -24,22 +24,18 @@ button {
   font-style: normal;
 }
 /* Instrument Serif */
-@font-face {
-  font-family: "Instrument Serif";
-  src: url("/assets/fonts/Instrument_Serif/InstrumentSerif-Regular.woff2")
-    format("woff2");
+.instrument-serif-regular {
+  font-family: "Instrument Serif", serif;
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
 }
-@font-face {
-  font-family: "Instrument Serif, italic";
-  src: url("/assets/fonts/Instrument_Serif/InstrumentSerif-Italic.woff2")
-    format("woff2");
+
+.instrument-serif-regular-italic {
+  font-family: "Instrument Serif", serif;
   font-weight: 400;
   font-style: italic;
-  font-display: swap;
 }
+
 :root {
   --bg: #f3f0b3;
   --dark: #1e1e1e;
@@ -49,7 +45,7 @@ button {
   --primary-color: white;
   --geist-font: "Geist Mono", monospace;
   --serif-font: "Instrument Serif";
-  --serif-italic-font: "Instrument Serif, italic";
+  --serif-italic-font: "Instrument Serif, serif";
   /* 1440 - 1024 */
   --fontsize-20: clamp(1.125rem, 0.8173rem + 0.4808vw, 1.25rem); /* 20-18 */
   --fontsize-25: clamp(1.25rem, 0.4808rem + 1.2019vw, 1.5625rem); /* 25-20 */
@@ -112,6 +108,7 @@ button {
 .logo {
   font-size: var(--fontsize-25);
   font-family: var(--serif-italic-font);
+  font-style: italic;
 }
 .nav-btn {
   text-decoration: none;
@@ -162,13 +159,14 @@ button {
   position: absolute;
   background-color: var(--black);
   color: var(--primary-color);
-  padding: 1rem 0.5rem;
+  padding: 1rem 0.3rem;
   text-align: center;
   border-radius: 50%;
   font-size: 0.8vw;
   font-family: var(--serif-italic-font);
+  font-style: italic;
   text-transform: uppercase;
-  left: 61%;
+  left: 60%;
 }
 .circle-btn {
   width: 11vw;
@@ -222,6 +220,7 @@ button {
   opacity: 0.9;
   margin-bottom: 0.3rem;
   font-family: var(--serif-italic-font);
+  font-style: italic;
 }
 .email-info span {
   font-size: 14px;
@@ -238,6 +237,7 @@ hr {
   font-size: var(--fontsize-20);
   opacity: 0.9;
   font-family: var(--serif-italic-font);
+  font-style: italic;
 }
 .social-link {
   display: flex;
@@ -310,6 +310,24 @@ hr {
   text-decoration: none;
   font-family: var(--geist-font);
   font-size: 0.9vw;
+}
+.code-link {
+  color: var(--primary-color);
+  position: relative;
+  transition: 0.3s all;
+}
+.code-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  background: var(--primary-color);
+  transition: width 0.6s ease;
+}
+.code-link:hover::after {
+  width: 100%;
 }
 
 /* FOOTER */
